@@ -38,14 +38,16 @@ def main():
 
         try:
             image = Image.open(file_path)
+            if image.mode == 'RGBA':
+                image = image.convert('RGB')
             _, ext = os.path.splitext(file_path)
-            if not ext.lower() == ".png":
-                new_file_path = os.path.splitext(file_path)[0] + ".png"
+            if not ext.lower() == ".jpeg" and not ext.lower() == ".jpg":
+                new_file_path = os.path.splitext(file_path)[0] + ".jpg"
                 image.save(new_file_path)
-                print("Converted to PNG!")
+                print("Converted to JPEG!")
                 break
             else:
-                print("The image is already in PNG format.")
+                print("The image is already in JPEG format.")
                 break
         except UnidentifiedImageError:
             print("Error: The file is not a valid image format. Please try again.")
