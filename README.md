@@ -1,5 +1,5 @@
 # PyConverters
-## Collection of Python based image & video converters I made
+## Simple Python-based image & video conversion tools 
 
 Inside is a collection of conversion tools, which all do different things. All of these will require Python, however they install pip and all other needed libraries by themselves. 
 
